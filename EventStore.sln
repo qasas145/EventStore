@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emitter", "Emitter\Emitter.csproj", "{A2AA8736-86D8-4670-98ED-587E0E57EB81}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventStore.Console", "EventStore.Console\EventStore.Console.csproj", "{A2AA8736-86D8-4670-98ED-587E0E57EB81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{E931CBD5-E864-45F3-A965-7FF46439E276}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventStore.Framework", "EventStore.Framework\EventStore.Framework.csproj", "{E931CBD5-E864-45F3-A965-7FF46439E276}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,17 +1,23 @@
 ﻿using System.Text;
 using EventStore.Client;
-using Common.Infrastructure;
-using Common.Uitlities;
-using Common.Domain;
+using EventStore.Framework.Utilities;
+using EventStoreFramework.Domain.DomainEvents;
+using EventStoreFramework.Infrastructure.Interfaces;
+using EventStoreFramework.Utilities;
 
-public class EventStoreGateway
+public class EventStoreGateway : IEventStore
 {
-    public async Task AppendEventAsync(string streamName, Order order)
+    public async Task SaveEventAsync(string streamName, EventBase @event)
     {
 
         var settings = EventStoreClientSettings.Create("esdb://localhost:2113?tls=false");
         using var client = new EventStoreClient(settings);
-        var eventData = EventFactory.CreateEvent(order);
+        var eventData = new EventData(
+
+                @event.Id,
+                @event.Type,
+                Encoding.UTF8.GetBytes(@event.Data)
+        );
 
         await client.AppendToStreamAsync(
             streamName,
@@ -30,7 +36,7 @@ public class EventStoreGateway
         {
             var json = Encoding.UTF8.GetString(resolvedEvent.Event.Data.Span);
 
-            PrintInConsole.PrintWithColor(() => Console.ForegroundColor = ConsoleColor.Blue, json);
+            PrintInConsole.PrintWithColor(Colors.Blue, json);
         }
     }
 

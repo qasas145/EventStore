@@ -1,4 +1,4 @@
-﻿namespace Common.Domain;
+﻿namespace EventStoreFramework.Domain.Entities;
 public class Order
 {
     public Guid Id { get; private set; }
