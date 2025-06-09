@@ -2,7 +2,7 @@
 
 namespace EventStoreFramework.Infrastructure.Interfaces
 {
-    internal interface IEventStore
+    public interface IEventStore
     {
         Task SaveEventAsync(string streamName, EventBase @event);
         Task ReadEventAsync(string streamName);

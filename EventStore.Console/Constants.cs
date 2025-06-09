@@ -2,6 +2,6 @@
 {
     public class Constants
     {
-        public const string StreamName = "OrderStore";
+        public const string StreamName = "OrdersStore";
     }
 }

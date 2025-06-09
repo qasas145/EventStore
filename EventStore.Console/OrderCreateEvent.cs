@@ -1,6 +1,6 @@
 ﻿using EventStoreFramework.Domain.DomainEvents;
 
-namespace Emitter
+namespace EventStore.Console
 {
     public class OrderCreateEvent : EventBase
     {

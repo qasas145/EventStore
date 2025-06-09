@@ -1,6 +1,5 @@
 ﻿using EventStoreFramework.Domain.Entities;
 using EventStoreFramework.Utilities;
-using Emitter;
 using EventStore.Console;
 using EventStore.Framework.Utilities;
 
@@ -17,7 +16,7 @@ var orders = new List<Order>
 
 // Storing events 
 
-foreach(var order in orders)
+foreach (var order in orders)
 {
 
     var orderCreateEvent = new OrderCreateEvent()
